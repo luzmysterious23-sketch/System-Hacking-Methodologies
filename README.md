@@ -11,7 +11,11 @@ In progress. This README describes the planned exercises and learning objectives
 - [Exercise 1, Task 1 — Active Directory Enumeration and Account Correlation](exercises/exercise-01-task-01.md): analysis of supplied reference evidence, with professional figure labels and findings. 
 - [Exercise 1, Task 2 — Identify Credential Reuse](exercises/exercise-01-task-02.md): unsuccessful GordonB login and confirmed credential reuse through Pablo's user-level WinRM session.
 
-- [Exercise 2, Task 1 — Enumerate Active Directory](exercises/exercise-02-task-01.md): BloodHound-Python data collection and domain object findings; graph analysis pending.
+- [Exercise 2, Task 1 — Enumerate Active Directory](exercises/exercise-02-task-01.md): BloodHound collection, JSON import, and graph analysis, including the relationship-label discrepancy.
+
+- [Exercise 2, Task 2 — Escalate User Privileges](exercises/exercise-02-task-02.md): prescribed membership validation; result evidence pending.
+- [Exercise 2, Task 3 — Install Steganography Tool](exercises/exercise-02-task-03.md): OpenStego preparation workflow; result evidence pending.
+- [Exercise 2, Task 4 — Simulated File Exfiltration](exercises/exercise-02-task-04.md): embedding, transfer, and recovery of lab placeholder data; result evidence pending.
 
 ## Objective
 
