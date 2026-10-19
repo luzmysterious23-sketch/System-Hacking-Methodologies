@@ -1,10 +1,10 @@
-# Exercise 1 — Active Directory Enumeration and Account Correlation
+# Exercise 1 — Exploit Active Directory (AD)
 
 ## Task 1 — Review Previous Enumeration
 
 **Project:** System Hacking Methodologies  
 **Environment:** Authorized Practice Labs training environment  
-**Documentation scope:** Review of the supplied lab instructions and reference screenshots. Task 2 is pending.
+**Documentation scope:** Review of the supplied lab instructions and reference screenshots. The credential validation results are documented in [Task 2](exercise-01-task-02.md).
 
 ## Objective
 
@@ -95,7 +95,7 @@ Account information exposed by one application can help identify accounts elsewh
 
 ## Next Step
 
-Task 2 will continue the credential-reuse investigation. Password reuse and privilege escalation are not claimed as completed in this entry.
+[Task 2 — Identify Credential Reuse](exercise-01-task-02.md) continues this investigation and documents the login results. Task 1 establishes username matches; Task 2 confirms password reuse for Pablo.
 
 ## Screenshot Selection
 
