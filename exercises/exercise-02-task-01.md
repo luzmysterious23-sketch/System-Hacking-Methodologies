@@ -2,7 +2,7 @@
 
 ## Task 1 — Enumerate Active Directory
 
-**Stage:** Data collection completed in the supplied output; BloodHound graph analysis pending.  
+**Stage:** Collection and BloodHound graph review documented; privilege-change validation follows in Task 2.  
 **Environment:** Authorized Practice Labs training environment  
 **Workstation:** PLABKALI  
 **Domain:** `practicelabs.com`  
@@ -65,21 +65,64 @@ The collector queries `PLABDM02`, `PLABDM01`, `PLABWIN10`, and `PLABDC01` in the
 **Source:** `image(20261019-163629).png`  
 **Caption:** BloodHound-Python reports domain object counts, queries four computers, and completes collection in approximately 13 seconds.
 
+## BloodHound Import and Graph Analysis
+
+### 3. Start the Neo4j Database
+
+The lab's BloodHound version uses Neo4j as its graph database. The supplied terminal screenshot shows:
+
+```bash
+sudo neo4j console
+```
+
+The output ends with `Started.`, confirming database startup for this lab configuration.
+
+**Figure 9 — Neo4j Database Startup Confirmed**  
+**Source:** `image(20261019-164547).png`  
+**Caption:** Neo4j starts successfully and reports its local database interfaces.
+
+### 4. Import the Collected JSON Files
+
+BloodHound is opened from the Kali application search. Using **Upload Data**, the seven JSON files in the home folder are selected together: computers, containers, domains, GPOs, groups, OUs, and users. The upload panel shows completed imports.
+
+**Figure 10 — Selecting Seven Active Directory JSON Files**  
+**Source:** `image(20261019-164714).png`  
+**Caption:** The seven collection files are selected for import into BloodHound.
+
+**Figure 11 — BloodHound Import Progress**  
+**Source:** `image(20261019-164734).png`  
+**Caption:** The upload panel displays completed entries as the directory data is imported.
+
+### 5. Examine Paths to Domain Admins
+
+With Pablo's account displayed, the lab opens **More Info → Analysis → Find Shortest Paths to Domain Admins** and selects `DOMAIN ADMINS@PRACTICELABS.COM` as the target group. The graph exposes relationships involving Marketing Managers and Domain Admins.
+
+**Figure 12 — Selecting the Domain Admins Path Analysis**  
+**Source:** `image(20261019-164844).png`  
+**Caption:** BloodHound's built-in shortest-path analysis is selected to investigate routes to Domain Admins.
+
+**Figure 13 — Reviewing the Marketing Managers Relationship to Domain Admins**  
+**Source:** `image(20261019-164947).png`  
+**Caption:** The graph displays Marketing Managers connected to Domain Admins, alongside other directory relationships.
+
 ## Findings and Interpretation
 
-The output demonstrates that Pablo's domain account can retrieve directory information for subsequent relationship analysis. The collected objects provide the basis for examining group membership, permissions, and possible paths to higher privileges.
+The lab instructions identify Pablo as a member of Marketing Managers and describe that group as having `GenericAll` over Domain Admins. This describes an excessive delegation that could permit modification of the privileged group.
 
-At this stage, the evidence shows successful collection rather than a verified privilege escalation path. The next step is to inspect the generated JSON files and analyze their relationships in BloodHound. No sensitive-file exfiltration is shown in this part of Exercise 2.
+**Evidence distinction:** The supplied graph visibly labels the Marketing Managers-to-Domain Admins connection `MemberOf`, rather than `GenericAll`. Group nesting and delegated control are different relationships. The graph therefore supports a connection between the groups but does not independently verify the specific permission described by the instructions. The relevant edge details or directory permissions would be needed to resolve this mismatch.
+
+The portfolio records the lab's intended escalation path separately from the visible graph evidence. Task 2 documents the prescribed membership-change validation; successful elevation is not claimed from this graph alone.
 
 ## Skills Demonstrated
 
-- Separating local collection commands from a remote PowerShell session.
-- Configuring authenticated Active Directory data collection.
-- Interpreting domain object counts and collection output.
-- Preparing evidence for graph-based permission analysis.
+- Collecting and importing Active Directory relationship data.
+- Starting the lab's Neo4j database.
+- Using BloodHound's built-in path analysis.
+- Distinguishing group membership from delegated permissions.
+- Checking conclusions against visible evidence.
 
 ## Evidence Notes
 
-This entry is based on the supplied lab instructions and screenshots. The screenshots are labeled above but are not embedded because their command lines expose the lab password. The JSON files themselves have not been supplied for inspection.
+Screenshots are labeled by their supplied filenames; images are not embedded. Earlier collection screenshots contain passwords. The JSON contents have not been supplied for independent inspection.
 
-[Previous: Exercise 1, Task 2](exercise-01-task-02.md) | [Project overview](../README.md)
+[Next: Task 2 — Escalate User Privileges](exercise-02-task-02.md) | [Project overview](../README.md)
