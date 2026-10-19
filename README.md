@@ -6,6 +6,10 @@ Hands-on cybersecurity lab exploring Active Directory enumeration, credential re
 
 In progress. This README describes the planned exercises and learning objectives. Results and screenshots will be added as the lab is completed.
 
+## Portfolio Documentation
+
+- [Exercise 1, Task 1 — Active Directory Enumeration and Account Correlation](exercises/exercise-01-task-01.md): analysis of supplied reference evidence, with professional figure labels and findings. Task 2 is pending.
+
 ## Objective
 
 Develop an understanding of system hacking phases and attack techniques through guided exercises using the devices provided in the practice lab.
