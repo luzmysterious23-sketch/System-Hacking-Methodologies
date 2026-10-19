@@ -8,7 +8,8 @@ In progress. This README describes the planned exercises and learning objectives
 
 ## Portfolio Documentation
 
-- [Exercise 1, Task 1 — Active Directory Enumeration and Account Correlation](exercises/exercise-01-task-01.md): analysis of supplied reference evidence, with professional figure labels and findings. Task 2 is pending.
+- [Exercise 1, Task 1 — Active Directory Enumeration and Account Correlation](exercises/exercise-01-task-01.md): analysis of supplied reference evidence, with professional figure labels and findings. 
+- [Exercise 1, Task 2 — Identify Credential Reuse](exercises/exercise-01-task-02.md): unsuccessful GordonB login and confirmed credential reuse through Pablo's user-level WinRM session.
 
 ## Objective
 
