@@ -4,7 +4,7 @@ Hands-on cybersecurity lab exploring Active Directory enumeration, credential re
 
 ## Status
 
-In progress. This README describes the planned exercises and learning objectives. Results and screenshots will be added as the lab is completed.
+Documentation covers all three exercises. Supplied screenshots support the early enumeration, login, and BloodHound analysis stages; later procedures are documented from lab instructions with result evidence pending. Screenshot captions are included; image assets are not yet embedded.
 
 ## Portfolio Documentation
 
@@ -16,6 +16,9 @@ In progress. This README describes the planned exercises and learning objectives
 - [Exercise 2, Task 2 — Escalate User Privileges](exercises/exercise-02-task-02.md): prescribed membership validation; result evidence pending.
 - [Exercise 2, Task 3 — Install Steganography Tool](exercises/exercise-02-task-03.md): OpenStego preparation workflow; result evidence pending.
 - [Exercise 2, Task 4 — Simulated File Exfiltration](exercises/exercise-02-task-04.md): embedding, transfer, and recovery of lab placeholder data; result evidence pending.
+
+- [Exercise 3 — Detection Avoidance](exercises/exercise-03-detection-avoidance.md): all four cleanup tasks, evidence interpretation, and privilege-rollback limits.
+- [Final Lab Summary](LAB-SUMMARY.md): findings, tools, and evidence coverage.
 
 ## Objective
 
